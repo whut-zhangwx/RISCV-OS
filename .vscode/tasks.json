@@ -1,0 +1,54 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "makefile-make",
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}/${relativeFileDirname}"
+      },
+      "command": "make",
+      // "group": {
+      //   "kind": "build",
+      //   "isDefault": true
+      // },
+      "problemMatcher": ["$gcc"]
+    },
+
+    {
+      "label": "qemu-run",
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceFolder}/${relativeFileDirname}"
+      },
+      "command": "echo 'QEMU started'; qemu-system-riscv32 -nographic -smp 1 -machine virt -bios none -serial mon:stdio -gdb tcp::1234 -S -kernel out/os.elf",
+      "args": [],
+      "dependsOn": ["makefile-make"],
+      "isBackground": true,
+      "problemMatcher": [
+        {
+          "pattern": [
+            {
+              "regexp": ".",
+              "file": 1,
+              "location": 2,
+              "message": 3
+            }
+          ],
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": ".",
+            "endsPattern": "QEMU started",
+          }
+        }
+      ]
+    },
+
+    {
+      // lsof -i tcp:1234 -> kill [pid]
+      "type": "shell",
+      "label": "Kill Qemu Server",
+      "command": "ps -ef | grep qemu-riscv64 | grep -v grep | awk '{print $2}' | xargs -i kill -9 {}"
+    },
+  ]
+}
