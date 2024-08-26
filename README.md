@@ -1,6 +1,6 @@
 ## RISC-V OS
 
-一个基于 RISC-V ISA 实现的 Operating System. 实现包括
+一个基于 RISC-V ISA 实现的 Operating System. 已实现包括
 
 - 屏幕打印字符串 (Print)
 - 内存分页 (Page)
@@ -12,7 +12,8 @@
 - 硬件定时器 (Hardware Timer)
 - 软件定时器 (Software Timer)
 - 机器模式和用户模式 (Machine and User Mode)
-- 更多功能还在持续开发中......
+
+等功能. 更多功能正在持续开发中...
 
 特别感谢汪辰老师的指导.
 
