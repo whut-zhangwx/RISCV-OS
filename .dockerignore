@@ -1,0 +1,6 @@
+out
+*/out
+*.o
+*.out
+*.elf
+/riscv-helloworld-c

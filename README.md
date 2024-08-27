@@ -4,18 +4,27 @@
 
 - 屏幕打印字符串 (Print)
 - 内存分页 (Page)
-- 并发处理多执行流 (Multi Tasks)
+- 并发处理多执行流 (Multitask)
 - 异常处理 (Exception Handler)
 - 外部中断 (External Interrupt)
 - 定时器中断 (Timer Interrupt)
 - 软件中断 (Software Interrupt)
+- 抢占式多任务 (Preemptive Multitask)
+- 自旋锁 (Spin Lock)
 - 硬件定时器 (Hardware Timer)
 - 软件定时器 (Software Timer)
 - 机器模式和用户模式 (Machine and User Mode)
+- 系统调用 (System Call)
 
 等功能. 更多功能正在持续开发中...
 
 特别感谢汪辰老师的指导.
+
+## Docker
+
+```shell
+docker pull whutzhangwx/riscv-os:0.1
+```
 
 ## 文档与参考
 
